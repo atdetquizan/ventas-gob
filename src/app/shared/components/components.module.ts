@@ -3,21 +3,27 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
+import { InfoUsuarioComponent } from './info-usuario/info-usuario.component';
+import { SidebarNavHeaderComponent } from './sidebar-nav-header/sidebar-nav-header.component';
+import { SidebarNavSearchComponent } from './sidebar-nav-search/sidebar-nav-search.component';
+import { SidebarNavLinksComponent } from './sidebar-nav-links/sidebar-nav-links.component';
+import { SidebarNavFooterComponent } from './sidebar-nav-footer/sidebar-nav-footer.component';
 
-
+const components = [
+  HeaderComponent,
+  FooterComponent,
+  SidebarNavComponent,
+  InfoUsuarioComponent,
+  SidebarNavHeaderComponent,
+  SidebarNavSearchComponent,
+  SidebarNavLinksComponent,
+  SidebarNavFooterComponent,
+];
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ]
+  declarations: [...components],
+  exports: [...components],
+  imports: [CommonModule, RouterModule],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

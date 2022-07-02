@@ -9,30 +9,37 @@ const routes: Routes = [
     children: [
       {
         path: 'categorias',
-        loadChildren: () => import('./categorias/categorias.module').then(m => m.CategoriasModule)
+        loadChildren: () =>
+          import('./categorias/categorias.module').then(
+            (m) => m.CategoriasModule
+          ),
       },
       {
         path: 'clientes',
-        loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
+        loadChildren: () =>
+          import('./clientes/clientes.module').then((m) => m.ClientesModule),
       },
       {
         path: 'productos',
-        loadChildren: () => import('./productos/productos.module').then(m => m.ProductosModule)
+        loadChildren: () =>
+          import('./productos/productos.module').then((m) => m.ProductosModule),
       },
       {
         path: 'servicios',
-        loadChildren: () => import('./servicios/servicios.module').then(m => m.ServiciosModule)
+        loadChildren: () =>
+          import('./servicios/servicios.module').then((m) => m.ServiciosModule),
       },
       {
         path: 'ventas',
-        loadChildren: () => import('./ventas/ventas.module').then(m => m.VentasModule)
-      }
-    ]
-  }
+        loadChildren: () =>
+          import('./ventas/ventas.module').then((m) => m.VentasModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
