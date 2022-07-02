@@ -23,10 +23,13 @@
 body {
     font-family     : "Poppins", sans-serif;
     overflow-x      : hidden;
-    background-color: #ececec;
-    min-height      : 100vh;
-    display         : flex;
-    position        : relative;
+    background-color: #cccccc;
+}
+
+.wrapper-home {
+    min-height: 100vh;
+    display   : flex;
+    position  : relative;
 }
 
 nav {
@@ -80,8 +83,31 @@ nav {
     }
 
     app-sidebar-nav-footer {
-        display: block;
+        display   : block;
         position  : relative;
         margin-top: auto;
     }
+}
+app-main {
+    flex          : 1;
+    color         : #1f2027;
+    display       : flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    h4 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+}
+
+.page-content {
+    flex: 1 1 auto;
+}
+
+.bg-red {
+    background: red;
+}
+.bg-green {
+    background: green;
 }
