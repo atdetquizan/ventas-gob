@@ -23,7 +23,7 @@
 body {
     font-family     : "Poppins", sans-serif;
     overflow-x      : hidden;
-    background-color: #cccccc;
+    // background-color: #cccccc;
 }
 
 .wrapper-home {
@@ -103,6 +103,7 @@ app-main {
 
 .page-content {
     flex: 1 1 auto;
+    padding: 45px 35px;
 }
 
 .bg-red {

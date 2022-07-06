@@ -34,6 +34,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./ventas/ventas.module').then((m) => m.VentasModule),
       },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'clientes'
+      }
     ],
   },
 ];
