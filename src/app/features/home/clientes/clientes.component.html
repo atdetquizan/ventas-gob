@@ -11,29 +11,59 @@
             <th>Telefono</th>
             <th>Correo</th>
             <th>TOTAL</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                <img src="{{cliente.foto}}"
-                     width="50px">
-            </td>
-            <!-- <td>{{concatFullName()}}</td> -->
-            <td>{{cliente|concatenarNombresCliente}}</td>
-            <td>{{cliente.nombre|lowercase}}</td>
-            <td>{{cliente.apellidos}}</td>
-            <td>{{cliente.fechaNacimiento}}</td>
-            <td>{{cliente.fechaNacimiento|edad}}</td>
-            <td>12345678</td>
-            <td>987123123</td>
-            <td>ejemplo@gmail.com</td>
-            <td>{{cliente | sumarTotales}}</td>
-        </tr>
+        <ng-container *ngFor="let cliente of clientes">
+            <tr *ngIf="cliente.status">
+                <td>
+                    <img src="{{cliente.foto}}"
+                         width="50px">
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="cliente.nombre"><br>
+                </td>
+                <!-- <td>{{concatFullName()}}</td> -->
+                <td appHighlight highlightColor="green" [title]="cliente.apellidos">{{cliente|concatenarNombresCliente}}</td>
+                <td>{{cliente.nombre|lowercase}}</td>
+                <td>{{cliente.apellidos}}</td>
+                <td>{{cliente.fechaNacimiento}}</td>
+                <td>{{cliente.fechaNacimiento|edad}}</td>
+                <td>12345678</td>
+                <!-- <td [attr.colspan]="2" [attr.rowspan]="2">987123123</td> -->
+                <td>987123123</td>
+                <td [ngClass]="{ 'text-center': false }">ejemplo@gmail.com</td>
+                <td [ngStyle]="{ background: 'red', fontSize: '12px' }">{{cliente | sumarTotales}}</td>
+                <td>
+                    <ng-container [ngSwitch]="cliente.action">
+                        <ng-container *ngSwitchCase="'eliminar'">
+                            <button type="button" (click)="onClickEliminar(cliente)">
+                                Eliminar
+                            </button>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'editar'">
+                            <a [routerLink]="['./detalle', cliente.id]" [queryParams]="cliente">
+                                ver detalle
+                            </a>
+                        </ng-container>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-container>
     </tbody>
 </table>
 
+<ng-container *ngIf="condicionEdad(); else templateMenorEdad">
+    Mayor edad
+</ng-container>
+
+<ng-template #templateMenorEdad>
+    Menor de edad
+</ng-template>
+
+
 Fecha => {{hoy|date:"dd/MM/YYYY , h:mm a"}}
 <pre>
-{{cliente|json}}
+{{clientes|json}}
 </pre>

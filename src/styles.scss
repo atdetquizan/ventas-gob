@@ -21,8 +21,8 @@
 }
 
 body {
-    font-family     : "Poppins", sans-serif;
-    overflow-x      : hidden;
+    font-family        : "Poppins", sans-serif;
+    overflow-x         : hidden;
     // background-color: #cccccc;
 }
 
@@ -88,27 +88,49 @@ nav {
         margin-top: auto;
     }
 }
+
 app-main {
     flex          : 1;
     color         : #1f2027;
     display       : flex;
     flex-direction: column;
-    flex: 1 1 auto;
+    flex          : 1 1 auto;
 
     h4 {
-        font-size: 16px;
+        font-size    : 16px;
         margin-bottom: 0px;
     }
 }
 
 .page-content {
-    flex: 1 1 auto;
+    flex   : 1 1 auto;
     padding: 45px 35px;
 }
 
 .bg-red {
     background: red;
 }
+
 .bg-green {
     background: green;
+}
+
+.tooltip-demo {
+    position     : relative;
+    // display      : inline-block;
+    border-bottom: 1px dotted black;
+
+    /* If you want dots under the hoverable text */
+    & .tooltiptext {
+        width           : 120px;
+        background-color: black;
+        color           : #fff;
+        text-align      : center;
+        padding         : 5px 0;
+        border-radius   : 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index : 1;
+    }
 }
