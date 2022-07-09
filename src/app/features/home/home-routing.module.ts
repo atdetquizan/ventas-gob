@@ -33,12 +33,13 @@ const routes: Routes = [
         path: 'ventas',
         loadChildren: () =>
           import('./ventas/ventas.module').then((m) => m.VentasModule),
+        data: { title: 'Example' },
       },
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'clientes'
-      }
+        redirectTo: 'clientes',
+      },
     ],
   },
 ];

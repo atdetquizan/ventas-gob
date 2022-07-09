@@ -27,5 +27,6 @@ const components = [
   declarations: [...components, ],
   exports: [...components],
   imports: [CommonModule, RouterModule],
+  providers: []
 })
 export class ComponentsModule {}

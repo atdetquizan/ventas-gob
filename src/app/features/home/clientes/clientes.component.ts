@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import moment from 'moment';
-import { Clientes } from './clientes.constant';
+import { Router } from '@angular/router';
+import { Clientes, ICliente } from './clientes.constant';
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -15,21 +15,36 @@ export class ClientesComponent implements OnInit {
   name = '';
 
   edad = 15;
-  clientes: any[] = Clientes;
-  
-  constructor() { }
+  clientes: ICliente[] = Clientes;
+  logoPeru = 'https://i.ytimg.com/vi/YMjK_TIhmtU/maxresdefault.jpg';
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
   }
 
-  onClickEliminar(cliente: any) {
+  onClickCalcular(event: any, cliente: ICliente) {
+    // console.log(event);
+    // event.target.innerText = (cliente.total1 + cliente.total2).toFixed(2);
+    cliente.totalFinal = cliente.total1 + cliente.total2;
+  }
+
+  onClickEliminar(cliente: ICliente) {
     console.log(cliente);
+  }
+
+  onClickDetail(cliente: ICliente) {
+    this.router.navigate(['clientes', 'detalle', cliente.id]);
+  }
+
+  onClickImage() {
+    this.logoPeru = 'https://brandemia.org/contenido/subidas/2014/03/marca-pais-peru-logo-004_587_440_901.jpg';
   }
 
   condicionEdad() {
     return this.edad > 18;
   }
+  
   // getYears(fechaNacimiento: string) {
   //   const nacimiento = moment(fechaNacimiento, 'DD/MM/YYYY');
   //   const hoy = moment();

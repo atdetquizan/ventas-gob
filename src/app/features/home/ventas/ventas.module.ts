@@ -12,6 +12,7 @@ import { VentasComponent } from './ventas.component';
   imports: [
     CommonModule,
     VentasRoutingModule
-  ]
+  ],
+  providers: []
 })
 export class VentasModule { }
