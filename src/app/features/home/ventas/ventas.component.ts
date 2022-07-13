@@ -20,12 +20,12 @@ export class VentasComponent implements OnInit {
   constructor(private pageService: PageService) {}
   
   ngOnInit(): void {
-    const data = from(fetch('/assets/data.json'));
-    data.subscribe({
-      next: async (response) => console.log(await response.json()),
-      error: (err) => console.log(err),
-      complete: () => console.log('Completado'),
-    });
+    // const data = from(fetch('/assets/data.json'));
+    // data.subscribe({
+    //   next: async (response) => console.log(await response.json()),
+    //   error: (err) => console.log(err),
+    //   complete: () => console.log('Completado'),
+    // });
 
     // const counter = interval(1000);
     // counter
@@ -35,14 +35,16 @@ export class VentasComponent implements OnInit {
     const apiData = ajax('/assets/data.json');
     apiData
       .pipe(
-        map((res) => {
-          console.log(res);
-          throw new Error('No se encontro ninguna informacion');
-        }),
-        catchError((error) => {
-          this.messageError = error;
-          return of([]);
-        })
+        // map((res) => {
+        //   console.log(res);
+        //   throw new Error('No se encontro ninguna informacion');
+        // }),
+        // catchError((error) => {
+        //   this.messageError = error;
+        //   return of([]);
+        // })
+        map((value: any) => value.response),
+        map((value: any[]) => value.map((x: any) => x.name))
       )
       .subscribe({
         next: (data) => console.log('data, ', data),

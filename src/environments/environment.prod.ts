@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'example-prod'
+  api: 'https://commercial-api.herokuapp.com'
 };

@@ -6,7 +6,9 @@ import { ClientesComponent } from './clientes.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ClientesDetalleComponent } from './clientes-detalle/clientes-detalle.component';
+import { UsersService } from 'src/app/shared/services/users.service';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ClientesDetalleComponent } from './clientes-detalle/clientes-detalle.co
     CommonModule,
     ClientesRoutingModule,
     SharedModule,
-    FormsModule
-  ]
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [UsersService]
 })
 export class ClientesModule { }
