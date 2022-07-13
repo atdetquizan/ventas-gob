@@ -16,6 +16,10 @@ export class UsersService {
     const user = JSON.parse(environment.storage.getItem('user') as string);
 
     return this.http.get(`${environment.api}/user/paginate`, {
+      params: {
+        limit: 2,
+        page: 1
+      },
       headers: {
         Authorization: `Bearer ${user.accessToken}`,
       },
