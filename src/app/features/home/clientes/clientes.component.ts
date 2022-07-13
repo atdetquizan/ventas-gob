@@ -29,6 +29,10 @@ export class ClientesComponent implements OnInit {
         keyboard: false,
       }
     );
+
+    this.usersService.paginate().subscribe((res) => {
+      console.log(res);
+    })
   }
 
   onClickNewClient() {

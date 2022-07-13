@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'https://commercial-api.herokuapp.com'
+  api: 'https://commercial-api.herokuapp.com',
+  storage: sessionStorage
 };
 
 /*

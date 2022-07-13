@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { AutenticacionRoutingModule } from './autenticacion-routing.module';
 import { AutenticacionComponent } from './autenticacion.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { AutenticacionComponent } from './autenticacion.component';
   ],
   imports: [
     CommonModule,
-    AutenticacionRoutingModule
-  ]
+    AutenticacionRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [AuthService]
 })
 export class AutenticacionModule { }

@@ -6,3 +6,4 @@
 - ngx-spinner => https://www.npmjs.com/package/ngx-spinner
 - @ngx-loading-bar => https://www.npmjs.com/package/@ngx-loading-bar/core
 - rxjs => https://rxjs.dev/guide/operators
+- generate box-shadow => https://box-shadow.dev/
