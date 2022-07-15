@@ -4,6 +4,7 @@ import { ajax } from 'rxjs/ajax';
 
 import { Modal } from 'bootstrap';
 import { PageService } from 'src/app/shared/services/page.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ventas',
@@ -17,7 +18,7 @@ export class VentasComponent implements OnInit {
   unsubcribe: Subject<void> = new Subject();
   fromModal!: Modal;
   messageError!: string;
-  constructor(private pageService: PageService) {}
+  constructor(private pageService: PageService, private router: Router) {}
   
   ngOnInit(): void {
     // const data = from(fetch('/assets/data.json'));
@@ -57,7 +58,7 @@ export class VentasComponent implements OnInit {
         keyboard: false,
       }
     );
-
+    console.log(this.router);
     this.pageService.titlePage.next('Pagina de ventas');
   }
 
