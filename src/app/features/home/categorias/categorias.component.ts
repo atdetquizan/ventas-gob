@@ -73,6 +73,7 @@ export class CategoriasComponent implements OnInit {
     this.categoriesService
       .post({
         name: values.name,
+        lastname: values.name,
       })
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe(

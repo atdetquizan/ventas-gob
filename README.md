@@ -7,3 +7,4 @@
 - @ngx-loading-bar => https://www.npmjs.com/package/@ngx-loading-bar/core
 - rxjs => https://rxjs.dev/guide/operators
 - generate box-shadow => https://box-shadow.dev/
+- CLI serve => https://angular.io/cli/serve

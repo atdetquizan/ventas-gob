@@ -11,8 +11,16 @@ export class CategoriesService {
     get() {
         return this.http.get<any[]>(`${environment.api}/categories`);
     }
+    
+    delete(id: number) {
+        return this.http.delete(`${environment.api}/categories/${id}`);
+    }
 
     post(params: any) {
         return this.http.post(`${environment.api}/categories`, params);
+    }
+
+    put(id: number, params: any) {
+        return this.http.put(`${environment.api}/categories/${id}`, params);
     }
 }
